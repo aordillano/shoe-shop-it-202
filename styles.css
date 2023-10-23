@@ -1,5 +1,4 @@
 /* Alieyah Ordillano, 10/06/2023, IT 202-001, Section 001 Unit 003 Assignment, amo47@njit.edu */
-
 * {
     /*For the whole webpage*/
     color: #9950de;
@@ -156,4 +155,30 @@ a:hover {
 }
 a:active {
     color: rgb(46, 197, 119);
+}
+/*For the table*/
+nav ul li {
+    /*For the categories links */
+	display: inline;
+}
+a {
+    /*For the categories links */
+    padding: 7px;
+}
+table {
+    /*For the table*/
+    margin: auto;
+}
+td {
+    /*For each cell in the table*/
+    border: 1px solid black;
+    padding: .2em .5em .2em .5em;
+}
+form label {
+    /*For the content in each cell*/
+    width: 6em;
+    float: left;
+}
+br {
+    clear: left;
 }

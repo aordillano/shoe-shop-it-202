@@ -11,6 +11,8 @@
             <nav>
                 <a href="home_page.php">Home</a> |
                 <a href="shipping.php">Shipping</a> |
+                <a href="shoes.php">Shoes</a> |
+                <a href="create.php">Create</a> |
             </nav>
             <main>
                 <!-- Subheading and description -->
@@ -54,10 +56,10 @@
                 </div>
                 <div id='spring'>
                     <figure>
-                        <img src="images/sparkly_flats.jpg" alt="Jewel Pearl White Pointed Flats" height="200" />
+                        <img src="images/sparkly_flats.jpg" alt="Jewel Sparkly Silver Pointed Flats" height="200" />
                     </figure>
                     <h3>For the spring</h3>
-                    <p>Jewel Pearl White Pointed Flats</p>
+                    <p>Jewel Sparkly Silver Pointed Flats</p>
                 </div>
                 <br>
                 <h2 id='second_h2'>...And for all occasions!</h2>

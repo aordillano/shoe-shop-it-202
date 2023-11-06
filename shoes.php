@@ -1,6 +1,7 @@
-<!--Alieyah Ordillano, 10/06/2023, IT 202-001, Section 001 Unit 3 Assignment, amo47@njit.edu-->
+<!--Alieyah Ordillano, 10/06/2023, IT 202-001, Section 001 Unit 5 Assignment, amo47@njit.edu-->
 <?php
     require_once('database.php');
+    $db = getDB();
 
     //getting shoe category id
     $shoe_category_id = filter_input(INPUT_GET, 'shoe_category_id', FILTER_VALIDATE_INT);
@@ -47,6 +48,7 @@
             <a href="home_page.php">Home</a> |
             <a href="shipping.php">Shipping</a> |
             <a href="shoes.php">Shoes</a> |
+            <a href="create.php">Create</a> |
         </nav>
         <main>
             <!-- for the categories links -->
@@ -82,6 +84,16 @@
                             <td><?php echo $shoe['shoeName']; ?></td>
                             <td><?php echo $shoe['description']; ?></td>
                             <td><?php echo $shoe['price']; ?></td>
+                            <td>
+                                <!-- any action done needs a form -->
+                                <form action="delete_shoe.php" method="post">
+                                    <input type="hidden" name="shoe_id"
+                                        value="<?php echo $shoe['shoeID']; ?>" />
+                                    <input type="hidden" name="shoe_category_id"
+                                        value="<?php echo $shoe['shoeCategoryID']; ?>" />
+                                    <input type="submit" value="Delete" />
+                                </form>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

@@ -29,10 +29,13 @@
             if (!empty($error_message)) { ?>
             <p>
                 <?php echo htmlspecialchars($error_message); ?>
-            <?php } ?>
+            <?php } ?> 
+            </p>
             <nav>
                 <a href="home_page.php">Home</a> |
                 <a href="shipping.php">Shipping</a> |
+                <a href="shoes.php">Shoes</a> |
+                <a href="create.php">Create</a> |
             </nav>
             <!-- Displays inputted values and creates shipping label -->
             <!-- Divided into divs for easy formatting -->
@@ -74,21 +77,21 @@
                 <div id="package_dimensions">
                     <p>Package Dimensions: </p>
                     <br>
-                    <label>Weight: </label>
+                    <label>Weight</label>
                     <input type="number" name="weight" value="<?php echo htmlspecialchars($weight); ?>" />
-                    <label> lbs</label>
+                    <label> (lbs): </label>
                     <br>
-                    <label>Length: </label>
+                    <label>Length</label>
                     <input type="number" name="length" value="<?php echo htmlspecialchars($length); ?>" />
-                    <label> inches</label>
+                    <label> (inches): </label>
                     <br>
-                    <label>Width: </label>
+                    <label>Width</label>
                     <input type="number" name="width" value="<?php echo htmlspecialchars($width); ?>" />
-                    <label> inches</label>
+                    <label> (inches): </label>
                     <br>
-                    <label>Height: </label>
+                    <label>Height</label>
                     <input type="number" name="height" value="<?php echo htmlspecialchars($height); ?>" />
-                    <label> inches</label>
+                    <label> (inches): </label>
                     <br>
                     <input id="confirm" type="submit" value="Confirm Order" />
                 </div>

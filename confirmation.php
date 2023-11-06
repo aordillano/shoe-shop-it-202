@@ -2,13 +2,13 @@
 <?php
     //Gets information from $_POST array and puts them into variables
     //Gets string variables straight from the array
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $street = $_POST['street'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
+    $first_name = filter_input(INPUT_POST, 'first_name');
+    $last_name = filter_input(INPUT_POST, 'last_name');
+    $street = filter_input(INPUT_POST, 'street');
+    $city = filter_input(INPUT_POST, 'city');
+    $state = filter_input(INPUT_POST, 'state');
     //Checks if zip code is a valid number
-    $zip_code = filter_input(INPUT_POST, 'zip_code', FILTER_VALIDATE_INT);
+    $zip_code = filter_input(INPUT_POST, 'zip_code');
     //Gets date from the $_POST array
     $ship_date = $_POST['ship_date'];
     //Check if they are valid numbers
@@ -87,6 +87,8 @@
             <nav>
                 <a href="home_page.php">Home</a> |
                 <a href="shipping.php">Shipping</a> |
+                <a href="shoes.php">Shoes</a> |
+                <a href="create.php">Create</a> |
             </nav>
             <main>
                 <h2>Your shipping label has been created!</h2>

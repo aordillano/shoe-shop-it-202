@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Oct 20, 2023 at 05:12 PM
+-- Generation Time: Nov 03, 2023 at 08:14 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `CynoShoes`
+-- Database: `amo47`
 --
 
 -- --------------------------------------------------------
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `shoes` (
   `description` text NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `dateAdded` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `shoes`
@@ -82,7 +82,8 @@ INSERT INTO `shoes` (`shoeID`, `shoeCategoryID`, `shoeCode`, `shoeName`, `descri
 (15, 5, 'fau_sandal', 'Fauna Beige Flat Sandals', 'Flat sandals with brown soles and beige woven straps', 30.00, '2023-10-19 18:53:33'),
 (16, 6, 'mari_sneak', 'Mariposa White Sneakers', 'Simple white sneakers with gold chain and butterfly pendant', 40.00, '2023-10-19 18:56:00'),
 (17, 6, 'timb_sneak', 'Timber Brown Sneakers', 'Brown sneakers with beige block designs', 35.00, '2023-10-19 18:56:00'),
-(18, 6, 'cara_sneak', 'Carat White Sneakers', 'Simple white sneakers with pink and blue designs', 35.00, '2023-10-19 18:56:00');
+(18, 6, 'cara_sneak', 'Carat White Sneakers', 'Simple white sneakers with pink and blue designs', 35.00, '2023-10-19 18:56:00'),
+(31, 1, 'nice_shoes', 'nice shoes', 'pretty nice shoes', 40.00, '2023-11-03 15:39:07');
 
 --
 -- Indexes for dumped tables
@@ -113,7 +114,7 @@ MODIFY `shoeCategoryID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 -- AUTO_INCREMENT for table `shoes`
 --
 ALTER TABLE `shoes`
-MODIFY `shoeID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `shoeID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

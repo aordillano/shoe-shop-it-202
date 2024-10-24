@@ -1,4 +1,4 @@
-<!--Alieyah Ordillano, 10/06/2023, IT 202-001, Section 001 Unit 3 Assignment, amo47@njit.edu-->
+<!--Alieyah Ordillano, 12/01/2023, IT 202-001, Section 001 Unit 11 Assignment, amo47@njit.edu-->
 <header>
     <img id="north_star_1" src='images/north_star.png' alt='CynoShoes North Star Logo' height='60'/>
     <h1 style="background-color = white;">CynoShoes</h1>

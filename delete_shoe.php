@@ -1,13 +1,13 @@
+<!--Alieyah Ordillano, 12/01/2023, IT 202-001, Section 001 Unit 11 Assignment, amo47@njit.edu-->
 <?php 
-    // Slide 37
     require_once('database.php');
 
-    //get the values
+    // Gets the values
     $shoe_id = filter_input(INPUT_POST, 'shoe_id', FILTER_VALIDATE_INT);
     $shoe_category_id = filter_input(INPUT_POST, 'shoe_category_id', FILTER_VALIDATE_INT);
 
     if($shoe_id != FALSE && $shoe_category_id != FALSE) {
-        //delete the product from the database
+        // Deletes the product from the database
         $db = getDB();
         $query = 'DELETE FROM shoes WHERE shoeID = :shoe_id';
         $statement = $db->prepare($query);
@@ -15,7 +15,7 @@
         $success = $statement->execute();
         $statement->closeCursor();
 
-        include('shoes.php');
         echo '<p>Shoe item has been deleted successfully.</p>';
+        include('shoes.php');
     }
 ?>

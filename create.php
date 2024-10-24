@@ -1,4 +1,4 @@
-<!--Alieyah Ordillano, 11/03/2023, IT 202-001, Section 001 Unit 7 Assignment, amo47@njit.edu-->
+<!--Alieyah Ordillano, 12/01/2023, IT 202-001, Section 001 Unit 11 Assignment, amo47@njit.edu-->
 <?php
     // Gets data from database
     require_once('database.php');
@@ -14,6 +14,14 @@
     if (!isset($shoe_name)) {$shoe_name='';}
     if (!isset($description)) {$description = '';}
     if (!isset($price)) {$price = '';}
+    
+    // Checks if user is logged in
+    require_once('valid_admin.php');
+    
+    // Starts session if not set
+    if (!isset($_SESSION['is_valid_admin'])) { 
+        session_start();
+    }
 ?>
 <!-- Code for create page -->
 <html>
@@ -23,15 +31,12 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!-- Puts in header -->
-        <?php include('header.php'); ?>
-        <!-- Navigation bar -->
-        <nav>
-            <a href="home_page.php">Home</a> |
-            <a href="shipping.php">Shipping</a> |
-            <a href="shoes.php">Shoes</a> |
-            <a href="create.php">Create</a> |
-        </nav>
+        <?php 
+            // Includes header
+            include('header.php'); 
+            // Includes navigation based on session status
+            include('menu.php'); 
+        ?>
         <main>
             <h2>Create and Add Shoe Item</h2>
             <form action="add_shoe.php" method="post">
@@ -47,20 +52,27 @@
                 <br>
                 <!-- Input for other shoe item attributes -->
                 <label>Shoe Code: </label>
-                <input type="text" name="shoe_code" value="<?php echo htmlspecialchars($shoe_code); ?>" />
+                <input type="text" name="shoe_code" id="shoe_code" value="<?php echo htmlspecialchars($shoe_code); ?>" />
+                <span></span>
                 <br>
                 <label>Shoe Name: </label>
-                <input type="text" name="shoe_name" value="<?php echo htmlspecialchars($shoe_name); ?>"/>
+                <input type="text" name="shoe_name" id="shoe_name" value="<?php echo htmlspecialchars($shoe_name); ?>"/>
+                <span></span>
                 <br>
                 <label>Description: </label>
-                <input type="textarea" name="description" value="<?php echo htmlspecialchars($description); ?>"/>
+                <input type="textarea" name="description" id="description" value="<?php echo htmlspecialchars($description); ?>"/>
+                <span></span>
                 <br>
                 <label>List Price: </label>
-                <input type="text" name="price" value="<?php echo htmlspecialchars($price); ?>"/>
+                <input type="text" name="price" id="price" value="<?php echo htmlspecialchars($price); ?>"/>
+                <span></span>
                 <br>
-                <input type="submit" value="Add Shoe" />
+                <input type="button" class="buttons" id="add_shoe_button" value="Add Shoe" /> |
+                <input type="button" class="buttons" id="reset_button" value="Reset" />
             </form>
         </main>
+        <!-- JS to validate input in between submitting -->
+        <script src="validate_create.js"></script>
         <!-- Puts in footer -->
         <?php include('footer.php'); ?>
     </body>

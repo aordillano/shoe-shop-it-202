@@ -1,4 +1,4 @@
-<!--Alieyah Ordillano, 10/06/2023, IT 202-001, Section 001 Unit 3 Assignment, amo47@njit.edu-->
+<!--Alieyah Ordillano, 12/01/2023, IT 202-001, Section 001 Unit 11 Assignment, amo47@njit.edu-->
 <?php
     //Checks if there is already content in text fields
     if (!isset($first_name))  {$first_name='';}
@@ -14,6 +14,8 @@
     if (!isset($width)) {$width = '';}
     if (!isset($height)) {$height = '';}
     if (!isset($total_value)) {$total_value = '';}
+
+    require_once('valid_admin.php');
 ?>
 <html>
     <head>
@@ -22,24 +24,23 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!-- Adds header -->
-        <?php include('header.php');
+        <?php
+            // Includes header
+            include('header.php'); 
+
+            // Includes navigation based on session status
+            include('menu.php'); 
+
             //Checks if there is error and directs user back to
             //shipping page with error message
-            if (!empty($error_message)) { ?>
-            <p>
-                <?php echo htmlspecialchars($error_message); ?>
-            <?php } ?> 
-            </p>
-            <nav>
-                <a href="home_page.php">Home</a> |
-                <a href="shipping.php">Shipping</a> |
-                <a href="shoes.php">Shoes</a> |
-                <a href="create.php">Create</a> |
-            </nav>
-            <!-- Displays inputted values and creates shipping label -->
-            <!-- Divided into divs for easy formatting -->
-            <form id="shipping_page" action="confirmation.php" method="post">
+            if (!empty($error_message)) {
+                echo $error_message;
+            }
+        ?>
+        <!-- Displays inputted values and creates shipping label -->
+        <!-- Divided into divs for easy formatting -->
+        <div id="shipping_page">
+            <form action="confirmation.php" method="post">
                 <div id="to_address">
                     <p>Ship To:</p>
                     <br>
@@ -93,9 +94,10 @@
                     <input type="number" name="height" value="<?php echo htmlspecialchars($height); ?>" />
                     <label> (inches): </label>
                     <br>
-                    <input id="confirm" type="submit" value="Confirm Order" />
+                    <input class="buttons" id="confirm" type="submit" value="Confirm Order" />
                 </div>
             </form>
+        </div>
         <?php include('footer.php'); ?>
     </body>
 </html>
